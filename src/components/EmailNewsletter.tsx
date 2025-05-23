@@ -3,15 +3,12 @@ import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
-
   const toggleExpanded = (articleId: number) => {
     setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
-
   const toggleAllExplanations = () => {
     setShowAllExplanations(prev => !prev);
     // If showing all, add all article IDs to expanded, otherwise clear the list
@@ -77,7 +74,6 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
-
   return <div className="max-w-2xl mx-auto bg-white font-garmin rounded-lg overflow-hidden">
       {/* Header with light orange background - more compact */}
       <div className="bg-orange-50 p-3 sm:p-6 pb-2">
@@ -123,7 +119,7 @@ const EmailNewsletter = () => {
       <div className="p-6 sm:px-12">
         {/* Articles Header with separator below it */}
         <div className="flex justify-between items-center py-[12px]">
-          <h2 className="text-2xl font-bold text-gray-900 font-garamond">Top 20 Articles Today</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
           <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
             <span>{showAllExplanations ? "🤔 Hide all" : "🤔 Show all"}</span>
           </button>
@@ -137,5 +133,4 @@ const EmailNewsletter = () => {
       </div>
     </div>;
 };
-
 export default EmailNewsletter;
