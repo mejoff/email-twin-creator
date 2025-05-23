@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -36,13 +37,13 @@ const EmailNewsletter = () => {
                 {i === 3 && "At vero eos et accusamus et iusto odio dignissimos"}
                 {i > 3 && `Article ${i} headline goes here with important news`}
               </h3>
-              <p className="text-gray-700 mb-3 leading-relaxed font-garamond">
+              <p className="text-gray-700 mb-2 leading-relaxed font-garamond">
                 {i === 1 && "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
                 {i === 2 && "Esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
                 {i === 3 && "Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."}
                 {i > 3 && "Summary of article content goes here. This provides context and key information about the topic covered in this article."}
               </p>
-              <div className="mb-2">
+              <div className="mb-3">
                 <span className="text-blue-900 font-bold font-helvetica text-xs">
                   {i === 1 && "Financial Times"}
                   {i === 2 && "Wall Street Journal"}
@@ -50,7 +51,7 @@ const EmailNewsletter = () => {
                   {i > 3 && `Source ${i}`}
                 </span>
               </div>
-              <div className="mb-3">
+              <div className="mb-4">
                 <p className="text-gray-600 text-sm mb-1 font-helvetica">Related Coverage:</p>
                 <ul className="text-sm text-blue-900 space-y-1 font-helvetica">
                   <li>• <a href="#" className="hover:underline">Related article title goes here</a></li>
@@ -58,7 +59,7 @@ const EmailNewsletter = () => {
                   {(i === 1 || i === 3) && <li>• <a href="#" className="hover:underline">Further analysis on this topic</a></li>}
                 </ul>
               </div>
-              <button onClick={() => toggleExpanded(i)} className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 font-helvetica">
+              <button onClick={() => toggleExpanded(i)} className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 font-helvetica mb-3">
                 <span>🤔</span>
                 <span>Why this matters to you?</span>
                 {expandedArticles.includes(i) ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -139,3 +140,4 @@ const EmailNewsletter = () => {
 };
 
 export default EmailNewsletter;
+
