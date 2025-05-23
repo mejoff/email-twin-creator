@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,7 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+			},
 			colors: {
+				'ruby-red': '#9b111e',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
