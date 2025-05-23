@@ -113,7 +113,7 @@ const EmailNewsletter = () => {
       </div>
 
       {/* Articles Header with separator below it */}
-      <div className="flex justify-between items-center py-2">
+      <div className="flex justify-between items-center py-[12px]">
         <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
         <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
           <span>{showAllExplanations ? "•• Hide all" : "•• Show all"}</span>
