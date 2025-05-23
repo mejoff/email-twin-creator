@@ -25,7 +25,7 @@ const EmailNewsletter = () => {
     for (let i = 1; i <= 20; i++) {
       articles.push(<article key={i} className="border-b border-gray-100 pb-6">
           <div className="flex flex-col space-y-2">
-            <span className="text-2xl font-bold text-ruby-red block">{i}</span>
+            <span className="text-2xl font-bold text-orange-800\n">{i}</span>
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight font-garamond">
                 {i === 1 && "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
@@ -84,7 +84,7 @@ const EmailNewsletter = () => {
               <AvatarFallback>JB</AvatarFallback>
             </Avatar>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1 font-helvetica">Joff's Daily Briefing</h1>
+          <h1 className="text-2xl font-bold mb-1 font-helvetica text-orange-800">Joff's Daily Briefing</h1>
           <p className="text-gray-500 font-helvetica text-sm mb-2">Thursday, May 8th</p>
         </div>
 
