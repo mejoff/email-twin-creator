@@ -3,15 +3,12 @@ import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
-  
   const toggleExpanded = (articleId: number) => {
     setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
-  
   const toggleAllExplanations = () => {
     setShowAllExplanations(prev => !prev);
     // If showing all, add all article IDs to expanded, otherwise clear the list
@@ -75,7 +72,6 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
-  
   return <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
       {/* Header */}
       <div className="text-center mb-1 py-0">
@@ -93,7 +89,7 @@ const EmailNewsletter = () => {
       <div className="py-3 text-center mb-1">
         <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
           <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
-            <span className="font-medium">Santa Barbara:</span>
+            <span className="font-semibold">Santa Barbara:</span>
             <Sun className="w-3 h-3" />
             <span>72°F</span>
             <Sun className="w-3 h-3" />
@@ -102,7 +98,7 @@ const EmailNewsletter = () => {
             <span>71°F</span>
           </div>
           <div className="flex items-center space-x-1 whitespace-nowrap">
-            <span className="font-medium">San Francisco:</span>
+            <span className="font-semibold">San Francisco:</span>
             <Cloud className="w-3 h-3" />
             <span>65°F</span>
             <CloudRain className="w-3 h-3" />
@@ -131,5 +127,4 @@ const EmailNewsletter = () => {
       </div>
     </div>;
 };
-
 export default EmailNewsletter;
