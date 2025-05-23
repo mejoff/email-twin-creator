@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -79,58 +78,62 @@ const EmailNewsletter = () => {
     return articles;
   };
 
-  return <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
-      {/* Header */}
-      <div className="text-center mb-1 py-0">
-        <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-700">
-          <Avatar className="w-full h-full">
-            <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
-            <AvatarFallback>JB</AvatarFallback>
-          </Avatar>
-        </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2 font-helvetica">Joff's Daily Briefing</h1>
-        <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
-      </div>
-
-      {/* Weather Section - No border or separator */}
-      <div className="py-3 text-center mb-1">
-        <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
-          <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
-            <span className="font-semibold">Santa Barbara:</span>
-            <Sun className="w-3 h-3" />
-            <span>72°F</span>
-            <Sun className="w-3 h-3" />
-            <span>75°F</span>
-            <CloudRain className="w-3 h-3" />
-            <span>71°F</span>
+  return <div className="max-w-2xl mx-auto bg-white font-garmin rounded-lg overflow-hidden">
+      {/* Header with light orange background */}
+      <div className="bg-orange-50 p-6 sm:p-12 pb-6">
+        <div className="text-center mb-1 py-0">
+          <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-700">
+            <Avatar className="w-full h-full">
+              <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
+              <AvatarFallback>JB</AvatarFallback>
+            </Avatar>
           </div>
-          <div className="flex items-center space-x-1 whitespace-nowrap">
-            <span className="font-semibold">San Francisco:</span>
-            <Cloud className="w-3 h-3" />
-            <span>65°F</span>
-            <CloudRain className="w-3 h-3" />
-            <span>63°F</span>
-            <Cloud className="w-3 h-3" />
-            <span>66°F</span>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2 font-helvetica">Joff's Daily Briefing</h1>
+          <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
+        </div>
+
+        {/* Weather Section - No border or separator */}
+        <div className="py-3 text-center mb-1">
+          <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
+            <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
+              <span className="font-semibold">Santa Barbara:</span>
+              <Sun className="w-3 h-3" />
+              <span>72°F</span>
+              <Sun className="w-3 h-3" />
+              <span>75°F</span>
+              <CloudRain className="w-3 h-3" />
+              <span>71°F</span>
+            </div>
+            <div className="flex items-center space-x-1 whitespace-nowrap">
+              <span className="font-semibold">San Francisco:</span>
+              <Cloud className="w-3 h-3" />
+              <span>65°F</span>
+              <CloudRain className="w-3 h-3" />
+              <span>63°F</span>
+              <Cloud className="w-3 h-3" />
+              <span>66°F</span>
+            </div>
+          </div>
+          <div className="mt-2 text-gray-500 text-xs font-helvetica">
+            <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
           </div>
         </div>
-        <div className="mt-2 text-gray-500 text-xs font-helvetica">
-          <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
+      </div>
+
+      <div className="p-6 sm:px-12">
+        {/* Articles Header with separator below it */}
+        <div className="flex justify-between items-center py-[12px]">
+          <h2 className="text-2xl font-bold text-gray-900 font-garamond">Top 20 Articles Today</h2>
+          <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
+            <span>{showAllExplanations ? "🤔 Hide all" : "🤔 Show all"}</span>
+          </button>
         </div>
-      </div>
+        <Separator className="mb-4" />
 
-      {/* Articles Header with separator below it */}
-      <div className="flex justify-between items-center py-[12px]">
-        <h2 className="text-2xl font-bold text-gray-900 font-garamond">Top 20 Articles Today</h2>
-        <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
-          <span>{showAllExplanations ? "🤔 Hide all" : "🤔 Show all"}</span>
-        </button>
-      </div>
-      <Separator className="mb-4" />
-
-      {/* Articles List */}
-      <div className="space-y-6">
-        {generateArticles()}
+        {/* Articles List */}
+        <div className="space-y-6">
+          {generateArticles()}
+        </div>
       </div>
     </div>;
 };
