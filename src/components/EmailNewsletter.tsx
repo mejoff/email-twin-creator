@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -27,13 +28,13 @@ const EmailNewsletter = () => {
           <div className="flex flex-col space-y-3">
             <span className="text-2xl font-bold text-ruby-red block">{i}</span>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight font-helvetica">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight font-garmin">
                 {i === 1 && "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
                 {i === 2 && "Duis aute irure dolor in reprehenderit in voluptate velit"}
                 {i === 3 && "At vero eos et accusamus et iusto odio dignissimos"}
                 {i > 3 && `Article ${i} headline goes here with important news`}
               </h3>
-              <p className="text-gray-700 mb-3 leading-relaxed font-helvetica">
+              <p className="text-gray-700 mb-3 leading-relaxed font-garmin">
                 {i === 1 && "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
                 {i === 2 && "Esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
                 {i === 3 && "Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."}
@@ -61,10 +62,12 @@ const EmailNewsletter = () => {
                 {expandedArticles.includes(i) ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
               </button>
               {expandedArticles.includes(i) && <div className="mt-3 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 font-helvetica">
-                  {i === 1 && "This article discusses important financial developments that could impact market trends and investment strategies."}
-                  {i === 2 && "This development could significantly affect business operations and regulatory compliance requirements."}
-                  {i === 3 && "This technology trend represents a major shift in the industry that could create new opportunities and challenges."}
-                  {i > 3 && "This matters because it connects to broader trends in the economy, technology, or society that may affect your work or personal interests."}
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>{i === 1 && "This article discusses important financial developments that could impact market trends and investment strategies."}</li>
+                    <li>{i === 2 && "This development could significantly affect business operations and regulatory compliance requirements."}</li>
+                    <li>{i === 3 && "This technology trend represents a major shift in the industry that could create new opportunities and challenges."}</li>
+                    <li>{i > 3 && "This matters because it connects to broader trends in the economy, technology, or society that may affect your work or personal interests."}</li>
+                  </ul>
                 </div>}
             </div>
           </div>
@@ -116,7 +119,7 @@ const EmailNewsletter = () => {
       <div className="flex justify-between items-center py-[12px]">
         <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
         <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
-          <span>{showAllExplanations ? "•• Hide all" : "•• Show all"}</span>
+          <span>{showAllExplanations ? "🤔 Hide all" : "🤔 Show all"}</span>
         </button>
       </div>
       <Separator className="mb-4" />
