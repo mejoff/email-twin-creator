@@ -48,7 +48,7 @@ const EmailNewsletter = () => {
                 {i > 3 && "Summary of article content goes here. This provides context and key information about the topic covered in this article."}
               </p>
               <div className="mb-2">
-                <span className="text-blue-800 font-bold font-helvetica text-sm">
+                <span className="text-blue-900 font-bold font-helvetica text-xs">
                   {i === 1 && "Financial Times"}
                   {i === 2 && "Wall Street Journal"}
                   {i === 3 && "TechCrunch"}
@@ -57,7 +57,7 @@ const EmailNewsletter = () => {
               </div>
               <div className="mb-3">
                 <p className="text-gray-600 text-sm mb-1 font-helvetica">Related Coverage:</p>
-                <ul className="text-sm text-blue-800 space-y-1 font-helvetica">
+                <ul className="text-sm text-blue-900 space-y-1 font-helvetica">
                   <li>• <a href="#" className="hover:underline">Related article title goes here</a></li>
                   {(i % 3 === 0) && <li>• <a href="#" className="hover:underline">Another related perspective</a></li>}
                   {(i === 1 || i === 3) && <li>• <a href="#" className="hover:underline">Further analysis on this topic</a></li>}
@@ -91,7 +91,7 @@ const EmailNewsletter = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white font-helvetica p-12 rounded-lg">
+    <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
       {/* Header */}
       <div className="text-center py-8 border-b border-gray-200 mb-2">
         <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-700">
@@ -108,29 +108,29 @@ const EmailNewsletter = () => {
         <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
       </div>
 
-      {/* Weather Section */}
+      {/* Weather Section - Without the border-t */}
       <div className="py-6 text-center mb-2">
-        <div className="flex justify-center items-center space-x-8 text-sm text-gray-600">
-          <div className="flex items-center space-x-2 font-helvetica">
+        <div className="inline-flex flex-wrap justify-center items-center text-xs text-gray-600 font-helvetica">
+          <div className="flex items-center space-x-1 mr-4">
             <span className="font-medium">Santa Barbara:</span>
-            <Sun className="w-4 h-4" />
+            <Sun className="w-3 h-3" />
             <span>72°F</span>
-            <Sun className="w-4 h-4" />
+            <Sun className="w-3 h-3" />
             <span>75°F</span>
-            <CloudRain className="w-4 h-4" />
+            <CloudRain className="w-3 h-3" />
             <span>71°F</span>
           </div>
-          <div className="flex items-center space-x-2 font-helvetica">
+          <div className="flex items-center space-x-1">
             <span className="font-medium">San Francisco:</span>
-            <Cloud className="w-4 h-4" />
+            <Cloud className="w-3 h-3" />
             <span>65°F</span>
-            <CloudRain className="w-4 h-4" />
+            <CloudRain className="w-3 h-3" />
             <span>63°F</span>
-            <Cloud className="w-4 h-4" />
+            <Cloud className="w-3 h-3" />
             <span>66°F</span>
           </div>
         </div>
-        <div className="mt-4 text-gray-500 text-sm font-helvetica">
+        <div className="mt-4 text-gray-500 text-xs font-helvetica">
           <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
         </div>
       </div>

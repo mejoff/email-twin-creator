@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+				'garmin': ['Garmin', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				'ruby-red': '#9b111e',
