@@ -3,9 +3,12 @@ import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
+  
   const toggleExpanded = (articleId: number) => {
     setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
@@ -18,6 +21,20 @@ const EmailNewsletter = () => {
       setExpandedArticles([]);
     }
   };
+
+  // Sample sources for the sources section
+  const sources = [
+    "Financial Times", 
+    "Wall Street Journal", 
+    "TechCrunch", 
+    "Bloomberg", 
+    "CNBC", 
+    "Reuters", 
+    "The Economist", 
+    "New York Times", 
+    "BBC News", 
+    "Harvard Business Review"
+  ];
 
   // Generate 20 article entries
   const generateArticles = () => {
@@ -129,6 +146,22 @@ const EmailNewsletter = () => {
         {/* Articles List */}
         <div className="space-y-6">
           {generateArticles()}
+        </div>
+        
+        {/* Sources Section - Added as requested */}
+        <div className="mt-8 pt-4 border-t border-gray-100">
+          <h2 className="text-xl font-bold text-gray-900 font-helvetica mb-3">Sources</h2>
+          <div className="flex flex-wrap gap-2">
+            {sources.map((source, index) => (
+              <Badge 
+                key={index} 
+                variant="outline" 
+                className="bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer"
+              >
+                {source}
+              </Badge>
+            ))}
+          </div>
         </div>
       </div>
     </div>;
