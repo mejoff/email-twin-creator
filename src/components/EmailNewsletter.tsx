@@ -1,21 +1,13 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
-
   const toggleExpanded = (articleId: number) => {
-    setExpandedArticles(prev => 
-      prev.includes(articleId) 
-        ? prev.filter(id => id !== articleId)
-        : [...prev, articleId]
-    );
+    setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
-
   const toggleAllExplanations = () => {
     setShowAllExplanations(prev => !prev);
     // If showing all, add all article IDs to expanded, otherwise clear the list
@@ -30,8 +22,7 @@ const EmailNewsletter = () => {
   const generateArticles = () => {
     const articles = [];
     for (let i = 1; i <= 20; i++) {
-      articles.push(
-        <article key={i} className="border-b border-gray-100 pb-8">
+      articles.push(<article key={i} className="border-b border-gray-100 pb-8">
           <div className="flex flex-col space-y-3">
             <span className="text-2xl font-bold text-ruby-red block">{i}</span>
             <div>
@@ -59,48 +50,33 @@ const EmailNewsletter = () => {
                 <p className="text-gray-600 text-sm mb-1 font-helvetica">Related Coverage:</p>
                 <ul className="text-sm text-blue-900 space-y-1 font-helvetica">
                   <li>• <a href="#" className="hover:underline">Related article title goes here</a></li>
-                  {(i % 3 === 0) && <li>• <a href="#" className="hover:underline">Another related perspective</a></li>}
+                  {i % 3 === 0 && <li>• <a href="#" className="hover:underline">Another related perspective</a></li>}
                   {(i === 1 || i === 3) && <li>• <a href="#" className="hover:underline">Further analysis on this topic</a></li>}
                 </ul>
               </div>
-              <button 
-                onClick={() => toggleExpanded(i)}
-                className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 font-helvetica"
-              >
+              <button onClick={() => toggleExpanded(i)} className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 font-helvetica">
                 <span>🤔</span>
                 <span>Why this matters to you?</span>
-                {expandedArticles.includes(i) ? 
-                  <ChevronUp className="w-4 h-4" /> : 
-                  <ChevronDown className="w-4 h-4" />
-                }
+                {expandedArticles.includes(i) ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
               </button>
-              {expandedArticles.includes(i) && (
-                <div className="mt-3 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 font-helvetica">
+              {expandedArticles.includes(i) && <div className="mt-3 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 font-helvetica">
                   {i === 1 && "This article discusses important financial developments that could impact market trends and investment strategies."}
                   {i === 2 && "This development could significantly affect business operations and regulatory compliance requirements."}
                   {i === 3 && "This technology trend represents a major shift in the industry that could create new opportunities and challenges."}
                   {i > 3 && "This matters because it connects to broader trends in the economy, technology, or society that may affect your work or personal interests."}
-                </div>
-              )}
+                </div>}
             </div>
           </div>
-        </article>
-      );
+        </article>);
     }
     return articles;
   };
-
-  return (
-    <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
+  return <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
       {/* Header */}
-      <div className="text-center py-8 border-b border-gray-200 mb-2">
+      <div className="text-center border-b border-gray-200 mb-2 py-0">
         <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-700">
           <Avatar className="w-full h-full">
-            <AvatarImage 
-              src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" 
-              alt="Joff" 
-              className="w-full h-full object-cover"
-            />
+            <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
             <AvatarFallback>JB</AvatarFallback>
           </Avatar>
         </div>
@@ -138,10 +114,7 @@ const EmailNewsletter = () => {
       {/* Articles Header */}
       <div className="flex justify-between items-center py-6">
         <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
-        <button 
-          onClick={toggleAllExplanations}
-          className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica"
-        >
+        <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
           <span>{showAllExplanations ? "•• Hide all" : "•• Show all"}</span>
         </button>
       </div>
@@ -150,8 +123,6 @@ const EmailNewsletter = () => {
       <div className="space-y-10">
         {generateArticles()}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default EmailNewsletter;
