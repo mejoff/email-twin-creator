@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
+  
   const toggleExpanded = (articleId: number) => {
     setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
+  
   const toggleAllExplanations = () => {
     setShowAllExplanations(prev => !prev);
     // If showing all, add all article IDs to expanded, otherwise clear the list
@@ -71,9 +75,10 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
+  
   return <div className="max-w-2xl mx-auto bg-white font-garmin p-6 sm:p-12 rounded-lg">
       {/* Header */}
-      <div className="text-center border-b border-gray-200 mb-2 py-0">
+      <div className="text-center mb-1 py-0">
         <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-700">
           <Avatar className="w-full h-full">
             <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
@@ -84,10 +89,10 @@ const EmailNewsletter = () => {
         <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
       </div>
 
-      {/* Weather Section - Without the border-t */}
-      <div className="py-6 text-center mb-2">
-        <div className="inline-flex flex-wrap justify-center items-center text-xs text-gray-600 font-helvetica">
-          <div className="flex items-center space-x-1 mr-4">
+      {/* Weather Section - No border or separator */}
+      <div className="py-3 text-center mb-1">
+        <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
+          <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
             <span className="font-medium">Santa Barbara:</span>
             <Sun className="w-3 h-3" />
             <span>72°F</span>
@@ -96,7 +101,7 @@ const EmailNewsletter = () => {
             <CloudRain className="w-3 h-3" />
             <span>71°F</span>
           </div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 whitespace-nowrap">
             <span className="font-medium">San Francisco:</span>
             <Cloud className="w-3 h-3" />
             <span>65°F</span>
@@ -106,18 +111,19 @@ const EmailNewsletter = () => {
             <span>66°F</span>
           </div>
         </div>
-        <div className="mt-4 text-gray-500 text-xs font-helvetica">
+        <div className="mt-2 text-gray-500 text-xs font-helvetica">
           <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
         </div>
       </div>
 
-      {/* Articles Header */}
-      <div className="flex justify-between items-center py-6">
+      {/* Articles Header with separator below it */}
+      <div className="flex justify-between items-center py-2">
         <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
         <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
           <span>{showAllExplanations ? "•• Hide all" : "•• Show all"}</span>
         </button>
       </div>
+      <Separator className="mb-4" />
 
       {/* Articles List */}
       <div className="space-y-10">
@@ -125,4 +131,5 @@ const EmailNewsletter = () => {
       </div>
     </div>;
 };
+
 export default EmailNewsletter;
