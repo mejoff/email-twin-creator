@@ -80,7 +80,7 @@ const EmailNewsletter = () => {
             <AvatarFallback>JB</AvatarFallback>
           </Avatar>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2 font-helvetica">Joff's Daily Briefing</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2 font-garamond\n">Joff's Daily Briefing</h1>
         <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
       </div>
 
