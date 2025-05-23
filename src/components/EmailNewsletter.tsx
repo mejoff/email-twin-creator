@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -148,8 +149,8 @@ const EmailNewsletter = () => {
           {generateArticles()}
         </div>
         
-        {/* Sources Section - Added as requested */}
-        <div className="mt-8 pt-4 border-t border-gray-100">
+        {/* Sources Section - Removed border-t class */}
+        <div className="mt-8 pt-4">
           <h2 className="text-xl font-bold text-gray-900 font-helvetica mb-3">Sources</h2>
           <div className="flex flex-wrap gap-2">
             {sources.map((source, index) => (
