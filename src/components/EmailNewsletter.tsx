@@ -85,7 +85,7 @@ const EmailNewsletter = () => {
             </Avatar>
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-1 font-helvetica">Joff's Daily Briefing</h1>
-          <p className="text-gray-500 font-helvetica text-sm">Thursday, May 8th</p>
+          <p className="text-gray-500 font-helvetica text-sm mb-2">Thursday, May 8th</p>
         </div>
 
         {/* Weather Section - Compacted */}
