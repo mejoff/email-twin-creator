@@ -28,13 +28,13 @@ const EmailNewsletter = () => {
           <div className="flex flex-col space-y-3">
             <span className="text-2xl font-bold text-ruby-red block">{i}</span>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight font-garmin">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight font-garamond">
                 {i === 1 && "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
                 {i === 2 && "Duis aute irure dolor in reprehenderit in voluptate velit"}
                 {i === 3 && "At vero eos et accusamus et iusto odio dignissimos"}
                 {i > 3 && `Article ${i} headline goes here with important news`}
               </h3>
-              <p className="text-gray-700 mb-3 leading-relaxed font-garmin">
+              <p className="text-gray-700 mb-3 leading-relaxed font-garamond">
                 {i === 1 && "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
                 {i === 2 && "Esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
                 {i === 3 && "Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."}
@@ -84,7 +84,7 @@ const EmailNewsletter = () => {
             <AvatarFallback>JB</AvatarFallback>
           </Avatar>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2 font-Garamond\\n">Joff's Daily Briefing</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2 font-garamond">Joff's Daily Briefing</h1>
         <p className="text-gray-500 font-helvetica">Thursday, May 8th</p>
       </div>
 

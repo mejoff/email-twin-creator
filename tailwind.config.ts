@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+				'garamond': ['Garamond', 'Times New Roman', 'serif'],
 				'garmin': ['Garmin', 'Arial', 'sans-serif'],
 			},
 			colors: {
