@@ -17,7 +17,7 @@ const HeaderOption1 = () => {
           </div>
           <div>
             <h1 className="text-xl font-bold font-helvetica">Joff's Daily Digest</h1>
-            <p className="text-blue-200 text-sm">20 articles from 15 sources</p>
+            <p className="text-blue-200 text-sm">Reviewed 125 articles; 15 sources</p>
           </div>
         </div>
 
