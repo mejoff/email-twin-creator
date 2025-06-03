@@ -92,21 +92,21 @@ const EmailNewsletter = () => {
     return articles;
   };
   return <div className="max-w-2xl mx-auto bg-white font-garmin rounded-lg overflow-hidden">
-      {/* Header with light orange background - more compact */}
-      <div className="bg-orange-50 p-3 sm:p-6 pb-2">
+      {/* Header with light orange background - much more compact */}
+      <div className="bg-orange-50 p-2 pb-1">
         <div className="text-center mb-0 py-0">
-          <div className="w-16 h-16 mx-auto mb-2 rounded-full overflow-hidden border-2 border-orange-700">
+          <div className="w-8 h-8 mx-auto mb-1 rounded-full overflow-hidden border border-orange-700">
             <Avatar className="w-full h-full">
               <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
               <AvatarFallback>JB</AvatarFallback>
             </Avatar>
           </div>
-          <h1 className="text-2xl font-bold mb-1 font-helvetica text-orange-800">Joff's Daily Briefing</h1>
-          <p className="text-gray-500 font-helvetica text-sm mb-2">Thursday, May 8th</p>
+          <h1 className="text-lg font-bold mb-0 font-helvetica text-orange-800">Joff's Daily Briefing</h1>
+          <p className="text-gray-500 font-helvetica text-xs mb-1">Thursday, May 8th</p>
         </div>
 
-        {/* Weather Section - Compacted */}
-        <div className="py-1 text-center mb-0">
+        {/* Weather Section - More compact */}
+        <div className="py-0 text-center mb-1">
           <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
             <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
               <span className="font-semibold">Santa Barbara:</span>
@@ -127,7 +127,7 @@ const EmailNewsletter = () => {
               <span>66°F</span>
             </div>
           </div>
-          <div className="mt-1 text-gray-500 text-xs font-helvetica">
+          <div className="mt-0 text-gray-500 text-xs font-helvetica">
             <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
           </div>
         </div>
@@ -148,7 +148,7 @@ const EmailNewsletter = () => {
           {generateArticles()}
         </div>
         
-        {/* Sources Section - Removed border-t class */}
+        {/* Sources Section */}
         <div className="mt-8 pt-4">
           <h2 className="text-xl font-bold text-gray-900 font-helvetica mb-3">Sources</h2>
           <div className="flex flex-wrap gap-2">
