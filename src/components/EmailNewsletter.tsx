@@ -4,6 +4,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import HeaderShowcase from './HeaderShowcase';
 
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
@@ -91,85 +92,11 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
-  return <div className="max-w-2xl mx-auto bg-white font-garmin rounded-lg overflow-hidden">
-      {/* Header with dark background - horizontal compact layout */}
-      <div className="bg-slate-600 text-white px-4 py-2">
-        <div className="flex items-center justify-between">
-          {/* Left side - Avatar and title */}
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20">
-              <Avatar className="w-full h-full">
-                <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
-                <AvatarFallback>JB</AvatarFallback>
-              </Avatar>
-            </div>
-            <h1 className="text-lg font-bold font-helvetica">Joff's Daily Digest</h1>
-          </div>
-
-          {/* Right side - Weather */}
-          <div className="flex items-center space-x-6 text-sm">
-            <div className="flex items-center space-x-1">
-              <span className="text-white/80">Santa Barbara</span>
-              <div className="flex items-center space-x-1">
-                <Sun className="w-3 h-3" />
-                <span>72°F</span>
-                <Sun className="w-3 h-3" />
-                <span>68°F</span>
-                <CloudRain className="w-3 h-3" />
-                <span>65°F</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-1">
-              <span className="text-white/80">San Francisco</span>
-              <div className="flex items-center space-x-1">
-                <Cloud className="w-3 h-3" />
-                <span>68°F</span>
-                <CloudRain className="w-3 h-3" />
-                <span>70°F</span>
-                <Cloud className="w-3 h-3" />
-                <span>66°F</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Bottom summary line */}
-        <div className="mt-2 text-center text-xs text-white/70">
-          <span className="font-bold text-white">20</span> articles evaluated from <span className="font-bold text-white">15</span> sources
-        </div>
-      </div>
-
-      <div className="p-6 sm:px-12">
-        {/* Articles Header with separator below it */}
-        <div className="flex justify-between items-center py-[12px]">
-          <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles Today</h2>
-          <button onClick={toggleAllExplanations} className="text-sm text-gray-600 hover:text-gray-900 flex items-center space-x-1 font-helvetica">
-            <span>{showAllExplanations ? "🤔 Hide all" : "🤔 Show all"}</span>
-          </button>
-        </div>
-        <Separator className="mb-4" />
-
-        {/* Articles List */}
-        <div className="space-y-6">
-          {generateArticles()}
-        </div>
-        
-        {/* Sources Section */}
-        <div className="mt-8 pt-4">
-          <h2 className="text-xl font-bold text-gray-900 font-helvetica mb-3">Sources</h2>
-          <div className="flex flex-wrap gap-2">
-            {sources.map((source, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className="bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer"
-              >
-                {source}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>;
+  return (
+    <div>
+      <HeaderShowcase />
+    </div>
+  );
 };
+
 export default EmailNewsletter;
