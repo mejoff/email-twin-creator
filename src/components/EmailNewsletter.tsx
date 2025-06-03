@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -76,7 +77,7 @@ const EmailNewsletter = () => {
               </div>
               <button onClick={() => toggleExpanded(i)} className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-900 font-helvetica mb-3">
                 <span>🤔</span>
-                <span>Why this matters to Joff?</span>
+                <span>Implications for Joff</span>
                 {expandedArticles.includes(i) ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
               </button>
               {expandedArticles.includes(i) && <div className="mt-3 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 font-helvetica">
@@ -101,16 +102,15 @@ const EmailNewsletter = () => {
       
       {/* Main Content */}
       <div className="px-6 py-4">
-        {/* Toggle switch for all explanations */}
-        <div className="mb-6 text-center">
-          <div className="flex items-center justify-center space-x-3">
-            <span className="text-sm font-helvetica text-gray-700">Top 20</span>
-            <Switch 
-              checked={showAllExplanations}
-              onCheckedChange={toggleAllExplanations}
-              className="data-[state=checked]:bg-orange-800"
-            />
-          </div>
+        {/* Top 20 Articles headline with Show Analysis button */}
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles</h2>
+          <Switch 
+            checked={showAllExplanations}
+            onCheckedChange={toggleAllExplanations}
+            className="data-[state=checked]:bg-orange-800"
+          />
+          <span className="text-sm font-helvetica text-gray-700">Show Analysis</span>
         </div>
 
         {/* Articles */}
