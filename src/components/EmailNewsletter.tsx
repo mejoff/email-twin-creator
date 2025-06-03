@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -7,11 +6,9 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import HeaderOption1 from './HeaderOption1';
-
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
   const [showAllExplanations, setShowAllExplanations] = useState<boolean>(false);
-  
   const toggleExpanded = (articleId: number) => {
     setExpandedArticles(prev => prev.includes(articleId) ? prev.filter(id => id !== articleId) : [...prev, articleId]);
   };
@@ -26,18 +23,7 @@ const EmailNewsletter = () => {
   };
 
   // Sample sources for the sources section
-  const sources = [
-    "Financial Times", 
-    "Wall Street Journal", 
-    "TechCrunch", 
-    "Bloomberg", 
-    "CNBC", 
-    "Reuters", 
-    "The Economist", 
-    "New York Times", 
-    "BBC News", 
-    "Harvard Business Review"
-  ];
+  const sources = ["Financial Times", "Wall Street Journal", "TechCrunch", "Bloomberg", "CNBC", "Reuters", "The Economist", "New York Times", "BBC News", "Harvard Business Review"];
 
   // Generate 20 article entries
   const generateArticles = () => {
@@ -94,9 +80,7 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
-
-  return (
-    <div className="max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden shadow-lg">
+  return <div className="max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden shadow-lg">
       {/* Header */}
       <HeaderOption1 />
       
@@ -104,14 +88,10 @@ const EmailNewsletter = () => {
       <div className="px-6 py-4">
         {/* Top 20 Articles headline with Show Implications button */}
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Today's Top 20 </h2>
           <div className="flex items-center space-x-3">
             <span className="text-sm font-helvetica text-gray-700">Show Implications</span>
-            <Switch 
-              checked={showAllExplanations}
-              onCheckedChange={toggleAllExplanations}
-              className="data-[state=checked]:bg-orange-800"
-            />
+            <Switch checked={showAllExplanations} onCheckedChange={toggleAllExplanations} className="data-[state=checked]:bg-orange-800" />
           </div>
         </div>
 
@@ -124,28 +104,24 @@ const EmailNewsletter = () => {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h3 className="text-lg font-bold text-gray-900 mb-4 font-helvetica">Sources</h3>
           <div className="grid grid-cols-2 gap-2">
-            {sources.map((source, index) => (
-              <div key={index} className="text-sm text-gray-700 font-helvetica">
+            {sources.map((source, index) => <div key={index} className="text-sm text-gray-700 font-helvetica">
                 • {source}
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
           <p className="text-xs text-gray-500 font-helvetica">
-            This digest was curated for Joff on {new Date().toLocaleDateString('en-US', { 
-              weekday: 'long', 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
+            This digest was curated for Joff on {new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
           </p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default EmailNewsletter;
