@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import HeaderOption1 from './HeaderOption1';
 
 const EmailNewsletter = () => {
@@ -95,21 +95,22 @@ const EmailNewsletter = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white">
+    <div className="max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden shadow-lg">
       {/* Header */}
       <HeaderOption1 />
       
       {/* Main Content */}
       <div className="px-6 py-4">
-        {/* Toggle button for all explanations */}
+        {/* Toggle switch for all explanations */}
         <div className="mb-6 text-center">
-          <Button 
-            onClick={toggleAllExplanations}
-            variant="outline"
-            className="text-sm font-helvetica"
-          >
-            {showAllExplanations ? 'Hide All Explanations' : 'Show All Explanations'}
-          </Button>
+          <div className="flex items-center justify-center space-x-3">
+            <span className="text-sm font-helvetica text-gray-700">Top 20</span>
+            <Switch 
+              checked={showAllExplanations}
+              onCheckedChange={toggleAllExplanations}
+              className="data-[state=checked]:bg-orange-800"
+            />
+          </div>
         </div>
 
         {/* Articles */}
