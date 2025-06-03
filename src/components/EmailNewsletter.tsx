@@ -105,12 +105,14 @@ const EmailNewsletter = () => {
         {/* Top 20 Articles headline with Show Analysis button */}
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles</h2>
-          <Switch 
-            checked={showAllExplanations}
-            onCheckedChange={toggleAllExplanations}
-            className="data-[state=checked]:bg-orange-800"
-          />
-          <span className="text-sm font-helvetica text-gray-700">Show Analysis</span>
+          <div className="flex items-center space-x-3">
+            <span className="text-sm font-helvetica text-gray-700">Show Analysis</span>
+            <Switch 
+              checked={showAllExplanations}
+              onCheckedChange={toggleAllExplanations}
+              className="data-[state=checked]:bg-orange-800"
+            />
+          </div>
         </div>
 
         {/* Articles */}
