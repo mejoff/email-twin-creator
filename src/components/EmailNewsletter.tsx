@@ -92,44 +92,50 @@ const EmailNewsletter = () => {
     return articles;
   };
   return <div className="max-w-2xl mx-auto bg-white font-garmin rounded-lg overflow-hidden">
-      {/* Header with light orange background - much more compact */}
-      <div className="bg-orange-50 p-2 pb-1">
-        <div className="text-center mb-0 py-0">
-          <div className="w-8 h-8 mx-auto mb-1 rounded-full overflow-hidden border border-orange-700">
-            <Avatar className="w-full h-full">
-              <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
-              <AvatarFallback>JB</AvatarFallback>
-            </Avatar>
+      {/* Header with dark background - horizontal compact layout */}
+      <div className="bg-slate-600 text-white px-4 py-2">
+        <div className="flex items-center justify-between">
+          {/* Left side - Avatar and title */}
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20">
+              <Avatar className="w-full h-full">
+                <AvatarImage src="/lovable-uploads/d25a5c2c-60d0-493a-ba01-f40f1ed68468.png" alt="Joff" className="w-full h-full object-cover" />
+                <AvatarFallback>JB</AvatarFallback>
+              </Avatar>
+            </div>
+            <h1 className="text-lg font-bold font-helvetica">Joff's Daily Digest</h1>
           </div>
-          <h1 className="text-lg font-bold mb-0 font-helvetica text-orange-800">Joff's Daily Briefing</h1>
-          <p className="text-gray-500 font-helvetica text-xs mb-1">Thursday, May 8th</p>
-        </div>
 
-        {/* Weather Section - More compact */}
-        <div className="py-0 text-center mb-1">
-          <div className="inline-flex flex-nowrap justify-center items-center text-xs text-gray-600 font-helvetica overflow-x-auto w-full">
-            <div className="flex items-center space-x-1 mr-4 whitespace-nowrap">
-              <span className="font-semibold">Santa Barbara:</span>
-              <Sun className="w-3 h-3" />
-              <span>72°F</span>
-              <Sun className="w-3 h-3" />
-              <span>75°F</span>
-              <CloudRain className="w-3 h-3" />
-              <span>71°F</span>
+          {/* Right side - Weather */}
+          <div className="flex items-center space-x-6 text-sm">
+            <div className="flex items-center space-x-1">
+              <span className="text-white/80">Santa Barbara</span>
+              <div className="flex items-center space-x-1">
+                <Sun className="w-3 h-3" />
+                <span>72°F</span>
+                <Sun className="w-3 h-3" />
+                <span>68°F</span>
+                <CloudRain className="w-3 h-3" />
+                <span>65°F</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-1 whitespace-nowrap">
-              <span className="font-semibold">San Francisco:</span>
-              <Cloud className="w-3 h-3" />
-              <span>65°F</span>
-              <CloudRain className="w-3 h-3" />
-              <span>63°F</span>
-              <Cloud className="w-3 h-3" />
-              <span>66°F</span>
+            <div className="flex items-center space-x-1">
+              <span className="text-white/80">San Francisco</span>
+              <div className="flex items-center space-x-1">
+                <Cloud className="w-3 h-3" />
+                <span>68°F</span>
+                <CloudRain className="w-3 h-3" />
+                <span>70°F</span>
+                <Cloud className="w-3 h-3" />
+                <span>66°F</span>
+              </div>
             </div>
           </div>
-          <div className="mt-0 text-gray-500 text-xs font-helvetica">
-            <span className="font-bold text-gray-900">247</span> articles across <span className="font-bold text-gray-900">42</span> sources analyzed
-          </div>
+        </div>
+        
+        {/* Bottom summary line */}
+        <div className="mt-2 text-center text-xs text-white/70">
+          <span className="font-bold text-white">20</span> articles evaluated from <span className="font-bold text-white">15</span> sources
         </div>
       </div>
 
