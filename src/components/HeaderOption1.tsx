@@ -5,7 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const HeaderOption1 = () => {
   return (
-    <div className="bg-blue-800 text-white px-6 py-3">
+    <div className="bg-blue-900 text-white px-6 py-3">
       <div className="flex items-center justify-between">
         {/* Left side - Avatar and title */}
         <div className="flex items-center space-x-4">

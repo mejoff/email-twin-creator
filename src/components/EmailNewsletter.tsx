@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sun, Cloud, CloudRain } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import HeaderShowcase from './HeaderShowcase';
+import HeaderOption1 from './HeaderOption1';
 
 const EmailNewsletter = () => {
   const [expandedArticles, setExpandedArticles] = useState<number[]>([]);
@@ -43,7 +44,7 @@ const EmailNewsletter = () => {
     for (let i = 1; i <= 20; i++) {
       articles.push(<article key={i} className="border-b border-gray-100 pb-6">
           <div className="flex flex-col space-y-2">
-            <span className="text-2xl font-bold text-orange-800\n">{i}</span>
+            <span className="text-2xl font-bold text-orange-800">{i}</span>
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight font-garamond">
                 {i === 1 && "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
@@ -92,9 +93,54 @@ const EmailNewsletter = () => {
     }
     return articles;
   };
+
   return (
-    <div>
-      <HeaderShowcase />
+    <div className="max-w-2xl mx-auto bg-white">
+      {/* Header */}
+      <HeaderOption1 />
+      
+      {/* Main Content */}
+      <div className="px-6 py-4">
+        {/* Toggle button for all explanations */}
+        <div className="mb-6 text-center">
+          <Button 
+            onClick={toggleAllExplanations}
+            variant="outline"
+            className="text-sm font-helvetica"
+          >
+            {showAllExplanations ? 'Hide All Explanations' : 'Show All Explanations'}
+          </Button>
+        </div>
+
+        {/* Articles */}
+        <div className="space-y-8">
+          {generateArticles()}
+        </div>
+
+        {/* Sources Section */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <h3 className="text-lg font-bold text-gray-900 mb-4 font-helvetica">Sources</h3>
+          <div className="grid grid-cols-2 gap-2">
+            {sources.map((source, index) => (
+              <div key={index} className="text-sm text-gray-700 font-helvetica">
+                • {source}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p className="text-xs text-gray-500 font-helvetica">
+            This digest was curated for Joff on {new Date().toLocaleDateString('en-US', { 
+              weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
