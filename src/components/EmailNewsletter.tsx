@@ -102,11 +102,11 @@ const EmailNewsletter = () => {
       
       {/* Main Content */}
       <div className="px-6 py-4">
-        {/* Top 20 Articles headline with Show Analysis button */}
+        {/* Top 20 Articles headline with Show Implications button */}
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900 font-helvetica">Top 20 Articles</h2>
           <div className="flex items-center space-x-3">
-            <span className="text-sm font-helvetica text-gray-700">Show Analysis</span>
+            <span className="text-sm font-helvetica text-gray-700">Show Implications</span>
             <Switch 
               checked={showAllExplanations}
               onCheckedChange={toggleAllExplanations}
